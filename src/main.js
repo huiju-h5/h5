@@ -32,7 +32,7 @@ router.beforeEach((to,from,next)=>{
   }else {
     let code= window.location.search.split('&')[0].split('=')[1];
     if(code){
-      // document.write( window.location.href,'--------------',window.location.search)
+      // //  document.write( window.location.href,'--------------',window.location.search)
       // 用code  换openId
       get('/wx/getWebTokenByCode',{code:code}).then((res)=>{
         if(res.code==10000 && res.data!=undefined && res.data.openid!='' &&  res.data.openid!=undefined){
